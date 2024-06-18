@@ -1,0 +1,89 @@
+﻿<Page x:Class="DClubs.RequestsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DClubs"
+      mc:Ignorable="d" 
+      d:DesignHeight="484" d:DesignWidth="720"
+      Title="WorkersView" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Background="#11141B" Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Row="0" Margin="18,10,18,10">
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="AddB" Content="Создать заявку" Width="90" Height="30" Click="Add_Click" Margin="20,0,0,0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="DelB" Content="Удалить" Width="70" Height="30" Click="Delete_Click" Margin="20,0,0,0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="UpB" Content="Обновить" Width="70" Height="30" Click="Update_Click" Margin="20,0,0,0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="ApproveB" Content="Одобрить" Width="80" Height="30" Click="Approve_Click" Margin="20,0,0,0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Style="{DynamicResource ButtonStyle1}" x:Name="RejectB" Content="Отклонить" Width="80" Height="30" Click="Reject_Click" Margin="20,0,0,0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <ComboBox x:Name="Filter" Template="{DynamicResource ComboBoxTemplate1}" Text="Фильтр" Foreground="White" Height="26" Width="106" Margin="20,0,0,0" SelectionChanged="Filter_Changed">
+                <ComboBox.Resources>
+                    <Style TargetType="ComboBoxItem">
+                        <Setter Property="Background" Value="#FF424346"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="BorderBrush" Value="#FF424346"/>
+                    </Style>
+                </ComboBox.Resources>
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FF11141B"/>
+                        <GradientStop Color="#FF424346" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+        </StackPanel>
+        <DataGrid Background="#11141B" HeadersVisibility="Column" RowBackground="#11141B" Foreground="WhiteSmoke" x:Name="Dg" Margin="18,10,18,36" Grid.Row="1" AutoGenerateColumns="False" Grid.ColumnSpan="3">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#11141B" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="BorderBrush" Value="White" />
+                </Style>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="BorderBrush" Value="White" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Request_Date}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия клиента" Binding="{Binding Accounts.Account_Surname}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding Accounts.Account_Phonenumber}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Эл. почта" Binding="{Binding Accounts.Account_Email}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Название кружка" Binding="{Binding Clubs.Club_Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Название группы" Binding="{Binding Groups.Group_Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status.Status_Name}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

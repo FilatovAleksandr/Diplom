@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="10e6fc30883540f9a8d4cbc87f11e499" Name="Diagram1">
+        <EntityTypeShape EntityType="ClubsModel.Accounts" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubsModel.Clubs" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubsModel.GroupFullness" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubsModel.Groups" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubsModel.Requests" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubsModel.Roles" Width="1.5" PointX="1.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubsModel.Schedule" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubsModel.Status" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubsModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClubsModel.Users" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="ClubsModel.FK_Accounts_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubsModel.FK_Groups_Accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubsModel.FK_Requests_Accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubsModel.FK_Users_Accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubsModel.FK_Groups_Clubs" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubsModel.FK_Requests_Clubs" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubsModel.FK_Groups_GroupFullness" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubsModel.FK_Requests_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubsModel.FK_Schedule_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="ClubsModel.FK_Requests_Status" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

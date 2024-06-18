@@ -1,0 +1,44 @@
+﻿<Page x:Class="DClubs.UsersView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DClubs"
+      mc:Ignorable="d" 
+      d:DesignHeight="484" d:DesignWidth="720"
+      Title="UsersView" GotFocus="Focused">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="#11141B" Grid.ColumnSpan="2" Grid.Row="0" Margin="18,10,18,10">
+            <TextBox x:Name="Search" Padding="2" Background="#FF0561A0" Foreground="White" Width="179" Height="30" Margin="20,0,0,0" TextChanged="Search_TextChanged" FontSize="16">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+        </StackPanel>
+        <TextBlock Text="Поиск" x:Name="SearchMark" IsHitTestVisible="False" Padding="2" Foreground="#7BD2F0" Width="200" Height="30" HorizontalAlignment="Left" Margin="43,20,0,20" FontSize="16"/>
+        <DataGrid x:Name="Dg" Background="#11141B" HeadersVisibility="Column" RowBackground="#11141B" Foreground="WhiteSmoke" Margin="18,10,18,36" Grid.Row="1" AutoGenerateColumns="False" Grid.ColumnSpan="2">
+            <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="#11141B" />
+                        <Setter Property="HorizontalAlignment" Value="Center" />
+                        <Setter Property="BorderBrush" Value="White" />
+                    </Style>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Setter Property="BorderBrush" Value="White" />
+                    </Style>
+                </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Логин" Binding="{Binding user_login}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding user_password}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Роль" Binding="{Binding Accounts.Roles.Role_Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Id Роли" Binding="{Binding Accounts.id_role}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

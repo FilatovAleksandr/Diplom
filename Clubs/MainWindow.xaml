@@ -1,0 +1,71 @@
+﻿<Window x:Class="DClubs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DClubs"
+        mc:Ignorable="d"
+        Title="Ремонт" Height="730" Width="1000" WindowStartupLocation="CenterScreen" Background="#1F2635" WindowStyle="None">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="172"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="TitleLB" Content="Кружки" Grid.Row="0" Foreground="WhiteSmoke" Width="952" HorizontalAlignment="Left" Padding="5,2" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown" Grid.ColumnSpan="2" Margin="0,0,0,550"/>
+        <WrapPanel HorizontalAlignment="Right" Grid.Column="1" Width="43" VerticalAlignment="Top" Height="20">
+            <Button x:Name="TurnB" Content="-" Background="#1F2635" Foreground="WhiteSmoke" HorizontalAlignment="Right" Width="20" Height="20" Click="Turn_Click"/>
+            <Button x:Name="ExitB" Content="X" Background="#1F2635" Foreground="WhiteSmoke" HorizontalAlignment="Right"  Width="20" Height="20" Click="Exit_Click"></Button>
+        </WrapPanel>
+        <Frame x:Name="Frame" Grid.Column="1" Loaded="FrameLoaded" NavigationUIVisibility="Hidden" Margin="0,50,0,0"/>
+        <Grid x:Name="sidePanel" Background="#FF536894" HorizontalAlignment="Left" Width="170">
+            <StackPanel>
+                <Grid Height="44" Background="#FF536894">
+                </Grid>
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontFamily="Century Gothic" FontSize="14" Foreground="White" BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
+                    <ListViewItem x:Name="RequestsB" Height="60" Selected="Requests_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="icons/request.png" Height="30" VerticalAlignment="Center" Width="30"/>
+                            <TextBlock Margin="20,0,0,0" Text="Запросы" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ClubsB" Selected="Clubs_Click" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="icons/Clubs.png" Height="30" VerticalAlignment="Center" Width="30"/>
+                            <TextBlock Margin="19,0,0,0" Text="Кружки" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ScheduleB" Selected="Schedule_Click" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="icons/schedule.png" Height="30" VerticalAlignment="Center" Width="30"/>
+                            <TextBlock Margin="20,0,0,0" Text="Расписание" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="GroupB" Selected="Group_Click" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="icons/group.png" Height="30" VerticalAlignment="Center" Width="30"/>
+                            <TextBlock Margin="20,0,0,0" Text="Группы" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="UsersB" Selected="Users_Click" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="icons/users.png" Height="30" VerticalAlignment="Center" Width="30"/>
+                            <TextBlock Margin="20,0,0,0" Text="Пользователи" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="AccountB" Selected="Account_Click" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="icons/user.png" Height="30" VerticalAlignment="Center" Width="30"/>
+                            <TextBlock Margin="20,0,0,0" Text="Аккаунт" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem  Selected="Leave_Click" x:Name="Leave"  Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="icons/logout.png" Height="30" VerticalAlignment="Center" Width="30"/>
+                            <TextBlock Margin="20,0,0,0" Text="Выход" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

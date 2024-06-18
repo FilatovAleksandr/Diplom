@@ -1,0 +1,75 @@
+﻿<Page x:Class="DClubs.AccountView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DClubs"
+      mc:Ignorable="d" 
+      d:DesignHeight="484" d:DesignWidth="720"
+      Title="AccountView" IsVisibleChanged="Page_IsVisibleChanged">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ListView Background="#11141B" Foreground="WhiteSmoke" x:Name="Dg" Grid.Row="1" Width="650" Height="200" HorizontalAlignment="Center" VerticalAlignment="Top" IsHitTestVisible="False" BorderBrush="#FF688CAF">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="auto" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate >
+                                <StackPanel Orientation="Vertical" >
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="Имя:               " FontSize="15"></TextBlock>
+                                    </WrapPanel>
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="Фамилия:           " FontSize="15"></TextBlock>
+                                    </WrapPanel>
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="Отчество:          " FontSize="15"></TextBlock>
+                                    </WrapPanel>
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="Дата рождения:     " FontSize="15"></TextBlock>
+                                    </WrapPanel>
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="Номер телефона:    " FontSize="15"></TextBlock>
+                                    </WrapPanel>
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="Электронная почта: " FontSize="15"></TextBlock>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="auto" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" >
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Account_Name}" FontSize="15"></TextBlock>
+                                    </WrapPanel>
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Account_Surname}" FontSize="15"/>
+                                    </WrapPanel>
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Account_Patronymic}" FontSize="15"/>
+                                    </WrapPanel>
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Account_Birthdate}" FontSize="15"/>
+                                    </WrapPanel>
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Account_Phonenumber}" FontSize="15"/>
+                                    </WrapPanel>
+                                    <WrapPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Account_Email}" FontSize="15"/>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Page>
